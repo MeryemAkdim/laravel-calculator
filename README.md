@@ -80,18 +80,18 @@ Using queues instead of synchronous processing has several benefits:
 - Reduces load on the main app
 - Automatic retry of failed tasks for improved reliability
 
-### 4. Explain the execution lifecycle of a job class in Laravel context
+### 4. Explain the execution lifecycle of a job class in a Laravel context, how are the boot and register methods invoked in each request cycle from a service provider?
 In Laravel, when a job is dispatched, it is added to the queue. The queue worker (php artisan queue:work) processes the job by calling the handle() method, where the job's logic is executed.
 
 The register() method in a service provider is used to bind services or classes into the container, and it runs once when the application starts. The boot() method is called after all services are registered and is used for tasks like setting up event listeners.
 
 For job-related tasks, you can use the boot() method to listen for job events like failures, while register() is used to bind any necessary services for the job.
 
-### 5. Best practices for processing large database records
+### 5. If you need to process a huge amount of database records to create certain business logic, what is the best way to retrieve them from the database using Eloquent? And why?
 The best way to process a large number of records using Eloquent is to use the chunk() method. This retrieves small batches of records at a time, making the process memory-efficient, faster, and preventing timeouts. Instead of loading all records into memory, it processes them in chunks, ensuring your app can handle large datasets without performance issues.
 
-### 6. Most significant project experience
+### 6. Tell me about the most important project you've worked on. What was your responsibility and what was the major part that you accomplished?
 One of the most important projects I worked on was a sourcing platform that managed product importation and the entire business flow. My responsibility was to design and implement key backend features, focusing on optimizing database interactions and ensuring efficient data management. A major accomplishment was developing a robust system to handle large volumes of data, streamlining supplier and product management, and improving the overall user experience. I also worked on creating APIs to facilitate smooth integration with third-party systems, which played a crucial role in automating business processes and improving operational efficiency.
 
-### 7. Experience with test automation
-Yes, I work with test automation. I've been using PHPUnit for a while to write and execute tests, and I also have experience with Test-Driven Development.
+### 7. Do you work with test automation
+Yes, I work with test automation. I’ve been using PHPUnit for a while to write and execute tests, and I also have experience with Test-Driven Development
