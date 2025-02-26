@@ -10,7 +10,7 @@ class CalculatorControllerTest extends TestCase
     {
         $response = $this->get(route('index'));
         $response->assertStatus(200);
-        $response->assertViewIs('welcome');
+        $response->assertViewIs('home');
     }
 
     public function test_calculator_page_returns_successful_response(): void
